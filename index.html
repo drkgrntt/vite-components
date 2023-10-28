@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components</title>
+
+    <script>
+      const toggleModal = () => {
+        const modal = document.querySelector("drk-modal");
+        modal.open = !modal.open;
+      };
+    </script>
+  </head>
+  <body>
+    <drk-container>
+      <drk-loader color="cyan"></drk-loader>
+      <drk-loader type="horizontal" color="rebeccapurple"></drk-loader>
+      <drk-field type="email" name="email" id="email" label="Email"></drk-field>
+      <drk-field type="date" name="date" id="date" label="Date"></drk-field>
+      <drk-field
+        type="textarea"
+        name="details"
+        id="details"
+        label="Details"
+      ></drk-field>
+      <drk-button
+        onclick="return new Promise((resolve) => setTimeout(resolve, 2000));"
+      >
+        Hello!
+      </drk-button>
+
+      <drk-button onclick="toggleModal()">Toggle Modal</drk-button>
+      <drk-modal> Nice </drk-modal>
+    </drk-container>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

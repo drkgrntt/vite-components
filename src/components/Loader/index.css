@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+/* Horizontal loader */
+
+.loader.circle {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+}
+
+.loader.circle .piece {
+  --color: white;
+  --color: var(--white);
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  height: 85%;
+  width: 85%;
+  margin: calc(var(--size) / 10);
+  border: calc(var(--size) / 10) solid var(--color);
+  border-radius: 50%;
+  animation: circle-loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--color) transparent transparent transparent;
+}
+
+.loader.circle .piece:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loader.circle .piece:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loader.circle .piece:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes circle-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Horiztonal Loader */
+
+.loader.horizontal {
+  display: inline-block;
+  position: relative;
+  width: 4rem;
+  height: 1rem;
+}
+.loader.horizontal .piece {
+  --color: white;
+  --color: var(--white);
+  position: absolute;
+  top: 0.5rem;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: var(--color);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  transition: all 0.3s;
+}
+.loader.horizontal .piece:nth-child(1) {
+  left: 0.5rem;
+  animation: horizontal-loader1 0.6s infinite;
+}
+.loader.horizontal .piece:nth-child(2) {
+  left: 0.5rem;
+  animation: horizontal-loader2 0.6s infinite;
+}
+.loader.horizontal .piece:nth-child(3) {
+  left: 2rem;
+  animation: horizontal-loader2 0.6s infinite;
+}
+.loader.horizontal .piece:nth-child(4) {
+  left: 3.5rem;
+  animation: horizontal-loader3 0.6s infinite;
+}
+@keyframes horizontal-loader1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes horizontal-loader3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes horizontal-loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(1.5rem, 0);
+  }
+}
